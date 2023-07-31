@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Stop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 20px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Jogo Stop</h1>
+        <form id="stopForm">
+            <label for="category">Categoria:</label>
+            <input type="text" id="category" required>
+            <label for="player1">Jogador 1:</label>
+            <input type="text" id="player1" required>
+            <label for="player2">Jogador 2:</label>
+            <input type="text" id="player2" required>
+            <!-- Adicione mais campos de jogador conforme necessário -->
+
+            <button type="submit">Iniciar Jogo</button>
+        </form>
+        <div id="gameResults" style="display: none;">
+            <!-- Os resultados do jogo serão exibidos aqui -->
+        </div>
+    </div>
+    <script>
+        document.getElementById("stopForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const category = document.getElementById("category").value;
+            const player1Answer = document.getElementById("player1").value;
+            const player2Answer = document.getElementById("player2").value;
+            // Adicione mais respostas dos jogadores conforme necessário
+
+            // Aqui você pode realizar a lógica do jogo, comparar as respostas dos jogadores, etc.
+            // Exiba os resultados do jogo no elemento com o id "gameResults"
+
+            document.getElementById("gameResults").innerHTML = `
+                <h2>Resultados do Jogo</h2>
+                <p>Categoria: ${category}</p>
+                <p>Jogador 1: ${player1Answer}</p>
+                <p>Jogador 2: ${player2Answer}</p>
+                <!-- Adicione mais resultados conforme necessário -->
+            `;
+            document.getElementById("gameResults").style.display = "block";
+        });
+    </script>
+</body>
+</html>
